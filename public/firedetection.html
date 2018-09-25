@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>User Community Incident Management</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href={{ url_for('index') }} class="title">User Community Incident Management</a>
+				<nav>
+					<ul>
+						<li><a href={{ url_for('index') }}>Back</a></li>
+					</ul>
+				</nav>
+			</header>
+
+    <!-- Wrapper -->
+			<div id="wrapper">
+
+        <!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Fire Detection Alerts</h1>
+
+							<!-- Text -->
+								<section>
+                  <div class="inner">
+      							<span class="image fit"><img src="images/pic06.jpg" alt="" /></span>
+      						</div>
+								</section>
+
+							<!-- Probability of fire based on weather -->
+								<section>
+									<h2>Probability of fire based on weather</h2>
+									<blockquote>This module search the weather in your location and send to Watson to get the probability of fire</blockquote>
+									<ul class="alt">
+										<li>Temperature: {{ weather.get_temperature() }} degrees</li>
+										<li>Humidity: {{ weather.get_humidity() }} %</li>
+										<li>Wind: {{ weather.get_wind() }} mph</li>
+										<li>Probability of fire based on weather: {{ fireprobability }}</li>
+									</ul>
+								</section>
+						</div>
+					</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

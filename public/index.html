@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>User Community Incident Management</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Prevention Management</a></li>
+							<li><a href="#two">Fire Incident User Management</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>User Community Incident Management</h1>
+							<p>Application for users for giving fire protocol recommendations<br />
+							and for alerts in case of fire in the Community</p>
+	<!--						<form>
+								<input type="text" name="email" id="id-email" value="" placeholder="Email" /><br />
+								<input type="text" name="password" id="id-password" value="" placeholder="Password" /><br />
+								<ul class="actions">
+									<li><button id="btnLogin" class="button scrolly">Login</a></li>
+									<li><button id="btnRegister" class="button scrolly">Register</a></li>
+								</ul>
+							</form> -->
+							{% if success %}
+						    <p>Welcome to the application {{ email }}</p>
+								<a href="{{ url_for('logout') }}">Logout</a>
+
+						  {% else %}
+						    {% for message in form.email.errors %}
+						      <div class="flash">{{ message }}</div>
+						    {% endfor %}
+
+						    {% for message in form.password.errors %}
+						      <div class="flash">{{ message }}</div>
+						    {% endfor %}
+
+						    <form action="{{ url_for('index') }}" method=post>
+						      {{ form.hidden_tag() }}
+
+						      {{ form.email.label }}
+						      {{ form.email }}
+
+									<br />
+
+						      {{ form.password.label }}
+						      {{ form.password }}
+
+									<br />
+
+						      {{ form.login }}  {{ form.register }}
+						    </form>
+							{% endif %}
+
+
+						</div>
+					</section>
+
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Register the data of your home</h2>
+									<p>Register your home if you want to get information about fire risk probability and other features</p>
+									<ul class="actions">
+										<li><a href="{{ url_for('yourhome') }}" class="button">My Home</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="right center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Home recommendations</h2>
+									<p>Here you can get a report about Watson recommendation for you home in order to decrease the fire risk probability</p>
+									<ul class="actions">
+										<li><a href="{{ url_for('homerecommendations') }}" class="button">Reccommendation</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Risk Assesment Report</h2>
+									<p>Calculates the fire load of the house and send alerts to user and information to the Community Command Center</p>
+									<ul class="actions">
+										<li><a href="{{ url_for('riskasessment') }}" class="button">Access Report</a></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+					<!-- Two -->
+						<section id="two" class="wrapper style2 spotlights">
+							<section>
+								<a href="#" class="image"><img src="images/pic05.jpg" alt="" data-position="center center" /></a>
+								<div class="content">
+									<div class="inner">
+										<h2>Evacuation reccomendation</h2>
+										<p>Help the community to make the hard decision to evacuate or confine in case of fire based on the information from several sources. If the final decision is confining, CIMC would recommend the best nearest house to confine the community.</p>
+										<ul class="actions">
+											<li><a href="{{ url_for('evacuationrecommendation') }}" class="button">What to do</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+							<section>
+								<a href="#" class="image"><img src="images/pic06.jpg" alt="" data-position="15% center" /></a>
+								<div class="content">
+									<div class="inner">
+										<h2>Fire detection alerts</h2>
+										<p>Fire alerts from diferent sources like images from cameras, recommedantions from firefighters and social networks</p>
+										<ul class="actions">
+											<li><a href="{{ url_for('firedetection') }}" class="button">Access Alerts</a></li>
+										</ul>
+									</div>
+								</div>
+							</section>
+						</section>
+
+			</div>
+
+			<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+				<script src="assets/js/signUp.js"></script>
+
+	</body>
+</html>

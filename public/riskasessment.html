@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>User Community Incident Management</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href={{ url_for('index') }} class="title">User Community Incident Management</a>
+				<nav>
+					<ul>
+						<li><a href={{ url_for('index') }}>Back</a></li>
+					</ul>
+				</nav>
+			</header>
+
+    <!-- Wrapper -->
+			<div id="wrapper">
+
+        <!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Risk Assesment Report</h1>
+
+						<!-- Text -->
+							<section>
+                <div class="inner">
+    							<span class="image fit"><img src="images/pic03.jpg" alt="" /></span>
+									<p>Calculates the fire load of the house and send alerts to user and information to the Community Command Center</p>
+    						</div>
+							</section>
+
+							<section>
+								<form action="{{ url_for('riskasessment') }}" method=post>
+									<h2>Fire Load Calculation</h2>
+									<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+	                       	<select name='activity' id="activity">
+															<option value=""{% if user_fireload_values[0] == "" %} selected{% endif %}>-- Select activity --</option>
+															<option value="Footwear"{% if user_fireload_values[0] == "Footwear" %} selected{% endif %}>Footwear</option>
+															<option value="Supply, packaging"{% if user_fireload_values[0] == "Supply, packaging" %} selected{% endif %}>Supply, packaging</option>
+															<option value="Cardboard"{% if user_fireload_values[0] == "Cardboard" %} selected{% endif %}>Cardboard</option>
+															<option value="Wood goods, carpentry"{% if user_fireload_values[0] == "Wood goods, carpentry" %} selected{% endif %}>Wood goods, carpentry</option>
+															<option value="Synthetic goods"{% if user_fireload_values[0] == "Synthetic goods" %} selected{% endif %}>Synthetic goods</option>
+	                        </select><br />
+											</div>
+											<div class="col-6 col-12-xsmall">
+													<input type="text" name="area" id="area" value="{{ user_fireload_values[1] }}" placeholder="Area (m2)" /><br />
+											</div>
+											<div class="col-6 col-12-xsmall">
+													<input type="text" name="wood" id="wood" value="{{ user_fireload_values[2] }}" placeholder="Wood Kg" /><br />
+											</div>
+											<div class="col-6 col-12-xsmall">
+													<input type="text" name="paperboard" id="paperboard" value="{{ user_fireload_values[3] }}" placeholder="Paperboard Kg" /><br />
+											</div>
+											<div class="col-6 col-12-xsmall">
+													<input type="text" name="cereals" id="cereals" value="{{ user_fireload_values[4] }}" placeholder="Cereals Kg" /><br />
+											</div>
+											<div class="col-6 col-12-xsmall">
+													<input type="text" name="alcohol" id="alcohol" value="{{ user_fireload_values[5] }}" placeholder="Alcohol Kg" /><br />
+											</div>
+											<div class="col-6 col-12-xsmall">
+													<input type="text" name="olive" id="olive" value="{{ user_fireload_values[6] }}" placeholder="Olive Oil Kg" /><br />
+											</div>
+											<div class="col-6 col-12-xsmall">
+													<input type="text" name="propane" id="propane" value="{{ user_fireload_values[7] }}" placeholder="Propane Kg" /><br />
+											</div>
+										</div>
+										<br />
+										<h2>Fire Load: {{ user_fireload_values[8] }}</h2>
+										<br />
+	                  <div class="col-12">
+	                      <ul class="actions">
+	                          <li><input type="submit" value="Save" class="primary" /></li>
+	                          <li><input type="reset" value="Reset" /></li>
+	                      </ul>
+	                  </div>
+            		</form>
+							</section>
+
+					</div>
+				</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>User Community Incident Management</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href={{ url_for('index') }} class="title">User Community Incident Management</a>
+				<nav>
+					<ul>
+						<li><a href={{ url_for('index') }}>Back</a></li>
+					</ul>
+				</nav>
+			</header>
+
+    <!-- Wrapper -->
+			<div id="wrapper">
+
+        <!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Evacuation Recommendations</h1>
+
+							<!-- Text -->
+								<section>
+                  <div class="inner">
+      							<span class="image fit"><img src="images/pic05.jpg" alt="" /></span>
+      						</div>
+								</section>
+								<!-- Map -->
+									<section id="escape" class="wrapper">
+										<h2>Escape Point</h2>
+										<p>In case you want to use the road from the escape point you have {{ duration }} min<br />
+										Remember your escape point is allocated in "Carrer Margarit, 3, Sant Cugat del Vallès, Barcelona" <br/>
+										Your meeting point in Barcelona is allocated in "Via Augusta, 251, Barcelona" <br/>
+										</p>
+										<div>
+    									<iframe width="800" height="600" src="map_google.html" frameborder="0" allowfullscreen></iframe>
+										</div>
+										 <br/>
+										  <br/>
+									</section>
+									<!-- Language Analisis -->
+										<section id="language" class="wrapper">
+											<h2>Social networks language analisis</h2>
+											<p>This part is a simulation, takes different texts (it could be for example twitter texts)
+												in order to analyse if the escape road is secure <br/>
+											</p>
+											<p> Text analysed and score: <br/><p>
+
+											{% for i in range(0, (text_people_road|length)) %}
+												<p> *** {{ text_people_road[i] }} - {{ text_people_road_sentiment[i] }}<p>
+											{% endfor %}
+											<p> Resume: {{ positive}} positive, {{ negative }} negative, {{ neutral }} neutral <br/><p>
+										</section>
+									<!-- Conclussion -->
+										<section id="language" class="wrapper">
+											<h2>Reccommendation</h2>
+											{% if (duration > 20 or negative > positive) %}
+												<p>The reccomendation is to go to a more secure house<br/>
+												The selected house address is: {{ house_secure[1] }}<br/>
+												</p>
+											{% else %}
+												<p>The reccomendation is to take the evacuation road<br/>
+												</p>
+											{% endif %}
+										</section>
+
+						</div>
+					</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

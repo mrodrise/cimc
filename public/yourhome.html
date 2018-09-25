@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>User Community Incident Management</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href={{ url_for('index') }} class="title">User Community Incident Management</a>
+				<nav>
+					<ul>
+						<li><a href={{ url_for('index') }}>Back</a></li>
+					</ul>
+				</nav>
+			</header>
+
+    <!-- Wrapper -->
+			<div id="wrapper">
+
+        <!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Your Home</h1>
+
+							<!-- Text -->
+								<section>
+                  <div class="inner">
+      							<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
+      							<p>Complete this form in case you want to get reccomendations about how to avoid a fire in your house.<br />
+      							It's important because for the firefighters the firs priorities are people and houses, if your house is not in risk then they'll focus on protecting the forest.</p>
+      						</div>
+								</section>
+
+          <!-- Form -->
+            <section>
+							<form action="{{ url_for('yourhome') }}" method=post>
+								<h2>Location</h2>
+								<div class="row gtr-uniform">
+										<div class="col-6 col-12-xsmall">
+												<input type="text" name="address" id="address" value="{{ yourhome_list_values[1] }}" placeholder="Address" /><br />
+												<input type="text" name="city" id="id-city" value="{{ yourhome_list_values[2] }}" placeholder="City" /><br />
+												<input type="text" name="postal_code" id="id-postal_code" value="{{ yourhome_list_values[3] }}" placeholder="Postal Code" /><br />
+										</div>
+									</div>
+                  <br />
+                  <h2>Environment Variables</h2>
+                  <div class="row gtr-uniform">
+                      <div class="col-6 col-12-xsmall">
+                          <select name="house_orientation" id="house_orientation">
+
+															{% for choices in yourhome_list["house_orientation"] %}
+																<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[4] %} selected{% endif %}>{{ choices[1] }}</option>
+															{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="type_of_house" id="type_of_house">
+
+														{% for choices in yourhome_list["type_of_house"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[5] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="topography" id="topography">
+
+														{% for choices in yourhome_list["topography"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[6] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="drought" id="drought">
+
+														{% for choices in yourhome_list["drought"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[7] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                  </div>
+                  <br />
+                  <h2>Next your house</h2>
+                  <div class="row gtr-uniform">
+                      <div class="col-6 col-12-xsmall">
+                          <select name="access_way" id="access_way">
+
+														{% for choices in yourhome_list["access_way"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[8] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="high_tension_towers" id="high_tension_towers">
+
+														{% for choices in yourhome_list["high_tension_towers"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[9] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="next_the_house" id="next_the_house">
+
+														{% for choices in yourhome_list["next_the_house"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[10] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="fence" id="fence">
+
+														{% for choices in yourhome_list["fence"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[11] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="water" id="water">
+
+														{% for choices in yourhome_list["water"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[12] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                  </div>
+                  <br />
+                  <h2>Your house</h2>
+                  <div class="row gtr-uniform">
+                      <div class="col-6 col-12-xsmall">
+                          <select name="outer_walls" id="outer_walls">
+
+														{% for choices in yourhome_list["outer_walls"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[13] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                            </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="accumulation_of_leaves" id="accumulation_of_leaves">
+
+														{% for choices in yourhome_list["accumulation_of_leaves"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[14] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="roof" id="roof">
+
+														{% for choices in yourhome_list["roof"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[15] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="barbecue" id="barbecue">
+
+														{% for choices in yourhome_list["barbecue"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[16] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="waterproof" id="waterproof">
+
+														{% for choices in yourhome_list["waterproof"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[17] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                      <div class="col-6 col-12-xsmall">
+                          <select name="water_source" id="water_source">
+
+														{% for choices in yourhome_list["water_source"] %}
+															<option value="{{ choices[0] }}"{% if choices[0] ==  yourhome_list_values[18] %} selected{% endif %}>{{ choices[1] }}</option>
+														{% endfor %}
+
+                          </select>
+                      </div>
+                  </div>
+                  <br />
+                  <div class="col-12">
+                      <ul class="actions">
+                          <li><input type="submit" value="Save" class="primary" /></li>
+                          <li><input type="reset" value="Reset" /></li>
+                      </ul>
+                  </div>
+            </form>
+          </section>
+					<!--
+
+					{% with messages = get_flashed_messages(with_categories=true) %}
+             {% if messages %}
+
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                <strong>Success! </strong> {{ message[1] }}
+                </div>
+            {% endif %}
+
+           {% if "Error" in message[1]: %}
+               <div class="alert alert-warning">
+               {{ message[1] }}
+               </div>
+           {% endif %}
+       {% endfor %}
+           {% endif %}
+       {% endwith %}
+        </div>
+-->
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

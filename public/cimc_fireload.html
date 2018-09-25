@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Community Incident Management Console</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href={{ url_for('cimc') }} class="title">Community Incident Management Console</a>
+				<nav>
+					<ul>
+						<li><a href={{ url_for('cimc') }}>Back</a></li>
+					</ul>
+				</nav>
+			</header>
+
+    <!-- Wrapper -->
+			<div id="wrapper">
+
+        <!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Fire Load Report</h1>
+
+							<!-- Text -->
+								<section>
+                  <div class="inner">
+      							<span class="image fit"><img src="images/pic07.jpg" alt="" /></span>
+      						</div>
+								</section>
+
+							<!-- Probability of fire based on weather -->
+								<section>
+									<h2>Relation of houses and associated risks</h2>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>User</th>
+													<th>Activity</th>
+													<th>Area (m2)</th>
+													<th>Paperboard (Kg)</th>
+													<th>Cerals (Kg)</th>
+													<th>Alcohol (Kg)</th>
+													<th>Olive Oil (Kg)</th>
+													<th>Propane (Kg)</th>
+													<th>Wood (Kg)</th>
+													<th>Fie Load QS (MJ/m2)</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for record in all_fireload %}
+													<tr>
+														<td>{{ record[0] }}</td>
+														<td>{{ record[1] }}</td>
+														<td>{{ record[2] }}</td>
+														<td>{{ record[3] }}</td>
+														<td>{{ record[4] }}</td>
+														<td>{{ record[5] }}</td>
+														<td>{{ record[6] }}</td>
+														<td>{{ record[7] }}</td>
+														<td>{{ record[8] }}</td>
+														<td>{{ record[9] }}</td>
+													</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+								</section>
+						</div>
+					</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
