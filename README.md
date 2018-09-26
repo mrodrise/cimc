@@ -34,7 +34,7 @@ Let’s save our house, let’s save the world with a solution called Community 
     8. Google Maps Api to get information about the evacuation route
 
 
-![schema](doc-images/Schema.jpg)
+![schema](doc_images/Schema.jpg)
 
 
 ### Table of Contents
@@ -121,15 +121,15 @@ In case you want to create the database in IBM Cloud, you have to follow the nex
 
 1. Select from the Catalog the Compose MySQL component
 
-![database1](doc-images/database1.png)
+![database1](doc_images/database1.png)
 
 2. Create the Database
 
-![database2](doc-images/database2.png)
+![database2](doc_images/database2.png)
 
 3. Create the credentials
 
-![database3](doc-images/database3.png)
+![database3](doc_images/database3.png)
 
 4. Introduce the credentials in the file [configbbdd.py](server/routes/configbbdd.py)
 
