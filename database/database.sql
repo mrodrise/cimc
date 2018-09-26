@@ -1,5 +1,3 @@
-CREATE DATABASE `compose` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
 /* tbl_user  table */
 
 CREATE TABLE `tbl_user` (
@@ -63,11 +61,11 @@ CREATE DEFINER=`admin`@`%` PROCEDURE `sp_createUser`(
 )
 BEGIN
     if ( select exists (select 1 from tbl_user where user_username = p_username) ) THEN
-     
+
         select 'Username Exists !!';
-     
+
     ELSE
-     
+
         insert into tbl_user
         (
             user_username,
@@ -78,9 +76,9 @@ BEGIN
             p_username,
             p_password
         );
-        
+
         select '';
-     
+
     END IF;
 END$$
 DELIMITER ;
@@ -108,15 +106,15 @@ CREATE DEFINER=`admin`@`%` PROCEDURE `sp_create_user_data`(
     IN value13 VARCHAR(20),
     IN value14 VARCHAR(20),
     IN value15 VARCHAR(20),
-   IN risk VARCHAR(20)    
+   IN risk VARCHAR(20)
 )
 BEGIN
     if ( select exists (select 1 from tbl_user_data where user_username = p_username) ) THEN
           select 'Already exists a register for this user !!';
- 
-     
+
+
     ELSE
-      
+
        INSERT INTO `compose`.`tbl_user_data`
 			(`user_username`,
 			`address`,
@@ -142,10 +140,10 @@ BEGIN
 			VALUES
             (p_username, p_address, p_city, p_postal_code, value1, value2, value3, value4, value5,
             value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, risk);
-        
+
         select '';
-      
-     
+
+
     END IF;
 END$$
 DELIMITER ;
@@ -154,7 +152,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE DEFINER=`admin`@`%` PROCEDURE `sp_create_user_fire_load`(
     IN p_username VARCHAR(20),
-    IN area VARCHAR(45), 
+    IN area VARCHAR(45),
     IN activity VARCHAR(45),
     IN wood VARCHAR(45),
     IN paperboard VARCHAR(45),
@@ -167,10 +165,10 @@ CREATE DEFINER=`admin`@`%` PROCEDURE `sp_create_user_fire_load`(
 BEGIN
     if ( select exists (select 1 from tbl_user_fire_load where user_username = p_username) ) THEN
           select 'Already exists a register for this user !!';
- 
-     
+
+
     ELSE
-      
+
    INSERT INTO `compose`.`tbl_user_fire_load`
 (`user_username`,
 `area`,
@@ -194,10 +192,10 @@ alcohol,
 olive,
 propane,
 total_fire_load);
-        
+
         select '';
-      
-     
+
+
     END IF;
 END$$
 DELIMITER ;
@@ -208,8 +206,8 @@ DELIMITER $$
 CREATE DEFINER=`admin`@`%` PROCEDURE `sp_select_all_user_data`()
 BEGIN
 
-    select * from tbl_user_data;      
-     
+    select * from tbl_user_data;
+
 END$$
 DELIMITER ;
 
@@ -221,8 +219,8 @@ BEGIN
 
 SELECT
     *
-FROM `compose`.`tbl_user_fire_load`;      
-     
+FROM `compose`.`tbl_user_fire_load`;
+
 END$$
 DELIMITER ;
 
@@ -234,8 +232,8 @@ CREATE DEFINER=`admin`@`%` PROCEDURE `sp_select_user_data`(
     )
 BEGIN
 
-    select * from tbl_user_data where user_username = p_username;      
-     
+    select * from tbl_user_data where user_username = p_username;
+
 END$$
 DELIMITER ;
 
@@ -258,8 +256,8 @@ SELECT
     `tbl_user_fire_load`.`olive`,
     `tbl_user_fire_load`.`propane`,
     `tbl_user_fire_load`.`total_fire_load`
-FROM `compose`.`tbl_user_fire_load` where user_username = p_username;      
-     
+FROM `compose`.`tbl_user_fire_load` where user_username = p_username;
+
 END$$
 DELIMITER ;
 
@@ -285,14 +283,14 @@ CREATE DEFINER=`admin`@`%` PROCEDURE `sp_update_user_data`(
     IN value13 VARCHAR(20),
     IN value14 VARCHAR(20),
     IN value15 VARCHAR(20),
-    IN risk VARCHAR(20) 
+    IN risk VARCHAR(20)
 )
 BEGIN
     if ( select exists (select 1 from tbl_user_data where user_username = p_username) ) THEN
        update `compose`.`tbl_user_data` set
 			`address` = p_address,
 			`city` = p_city,
-            `postal_code` = p_postal_code, 
+            `postal_code` = p_postal_code,
 			`ev_house_orientation` = value1,
 			`ev_topografy` = value2,
 			`ev_type_of_house` = value3,
@@ -308,17 +306,17 @@ BEGIN
 			`yh_accumulation_of_leaves` = value13,
 			`yh_barbeque` = value14,
 			`yh_water_source` = value15,
-			`risk` = risk    
+			`risk` = risk
             where user_username = p_username;
-	    
+
         select '';
- 
-     
+
+
     ELSE
           select 'Does not exist a register for the user !!';
-      
-      
-     
+
+
+
     END IF;
 END$$
 DELIMITER ;
@@ -341,7 +339,7 @@ BEGIN
     if ( select exists (select 1 from tbl_user_fire_load where user_username = p_username) ) THEN
 	   UPDATE `compose`.`tbl_user_fire_load`
 			SET
-			`area` = area,            
+			`area` = area,
 			`activity` = activity,
 			`wood` = wood,
 			`paperboard` = paperboard,
@@ -351,15 +349,15 @@ BEGIN
 			`propane` = propane,
 			`total_fire_load` = total_fire_load
 			WHERE `user_username` = p_username;
-	    
+
         select '';
- 
-     
+
+
     ELSE
           select 'Does not exist a register for the user !!';
-      
-      
-     
+
+
+
     END IF;
 END$$
 DELIMITER ;
