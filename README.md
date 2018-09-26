@@ -45,7 +45,7 @@ Technologies – This solution uses:
 * [Debug](#debug)
 
 <a name="summary"></a>
-### Summary
+# Summary
 
 The CIMC solution is based on two web applications:
 
@@ -80,12 +80,12 @@ There’s a database procedures and tables made to simplify the code of the app
 
 
 <a name="requirements"></a>
-### Requirements
-#### Local Development Tools Setup (optional)
+# Requirements
+## Local Development Tools Setup (optional)
 
 - If you don't already have it, install [Python](https://www.python.org/downloads/)
 
-#### IBM Cloud development tools setup (optional)
+## IBM Cloud development tools setup (optional)
 
 1. Install [Docker](http://docker.io) on your machine.
     * Optional: Install [IBM Cloud Developer Tools](https://github.com/IBM-Cloud/ibm-cloud-developer-tools) to build, run, and deploy using IDT
@@ -106,21 +106,21 @@ idt deploy --target container
 
 
 <a name="configuration"></a>
-### Configuration
+# Configuration
 
 The project contains IBM Cloud specific files that are used to deploy the application as part of an IBM Cloud DevOps flow. The `.bluemix` directory contains files used to define the IBM Cloud toolchain and pipeline for your application. The `manifest.yml` file specifies the name of your application in IBM Cloud, the timeout value during deployment, and which services to bind to.
 
 Credentials are either taken from the VCAP_SERVICES environment variable if in IBM Cloud, or from a config file if running locally.
 
 <a name='configuration_database'>
-### Database Configuration
+# Database Configuration
 
 
 
 
 
 <a name='configuration_watson'>
-### Watson Services Configuration
+# Watson Services Configuration
 
 How to setup cognitive services using IBM Watson in IBM Cloud: Predict Fire Risk based on home and surroundings configuration, on Weather Channel data and Fire Load with Watson Studio Machine Learning
 
@@ -149,7 +149,7 @@ Download data-sets in CSV format in the datasets directory
 
 ## Steps
 
-# A. Create Watson Studio services with IBM Cloud
+### A. Create Watson Studio services with IBM Cloud
 On Watson Studio choose New project and pick Data Science.
 Name the project and select your object storage.
 Choose + Add to project -> Data asset and add the data you downloaded in Prerequisites.
@@ -163,12 +163,12 @@ For a Technique choose Linear Regression or Multiclass Classification, depending
 The model will train, and then Save the model.
 Once you've created the model, go to Deployments and click +add Deployment. Name it, keep the default Web service, and click Save. Leave this page open for the next step...
 
-# B. Get the credentials
+### B. Get the credentials
 If you haven't left it open from the previous step, from the Watson Studio project page, under the Assets tab, double click the Watson Machine Learning model you created earlier. Go to the Deployments tab and double click to open it. Copy and paste the Deployment ID and Model ID values
 Go to the Implementation tab and copy the Scoring End-point at the top. You will use this as SCORING_URL in either the IBM Cloud Runtime Environment Variable.
 On your Watson Studio project page, got to the Services tab on the top menu bar, and navigate to the Watson Machine Learning service you created earlier. Double-click the service, go to Service Credentials -> View Credentials.
 
-#C. Include the new credentials in the project
+###C. Include the new credentials in the project
 
 Edit the file server/routes/credentials_cimc and modify all the credentials (name, password, urls and call). The code is commented to oriented you.
 
@@ -187,8 +187,8 @@ key_googlemaps='AIzaDke8ywEB9bGOgD8UAsAD93v9BCQ4PYErSyU'
 
 
 <a name="run"></a>
-### Run
-#### Using IBM Cloud development CLI
+# Run
+## Using IBM Cloud development CLI
 The IBM Cloud development plugin makes it easy to compile and run your application if you do not have all of the tools installed on your computer yet. Your application will be compiled with Docker containers. To compile and run your app, run:
 
 ```bash
@@ -197,17 +197,17 @@ bx dev run
 ```
 
 
-#### Using your local development environment
+## Using your local development environment
 
 
 Running flask applications has been simplified with a `manage.py` file to avoid dealing with configuring environment variables to run your app.
 
-##### Usage
+## Usage
 ```bash
 python manage.py subcommand [ipaddress]
 ```
 
-##### Subcommands
+## Subcommands
 `manage.py` offers a variety of different run commands to match the proper situation:
 * `start`: starts a server in a production setting using `gunicorn`.
 * `runserver`: starts a native flask development server. This includes backend reloading upon file saves and the Werkzeug stack-trace debugger for diagnosing runtime failures in-browser.
@@ -219,7 +219,7 @@ There are also a few utility commands:
 * `test`: runs all unit tests inside of the project's `test` directory
 
 
-##### Endpoints
+## Endpoints
 
 Your application is running at: `http://localhost:3000/` in your browser.
 
@@ -228,15 +228,15 @@ Your application is running at: `http://localhost:3000/` in your browser.
 
 
 <a name="debug"></a>
-### Debug
+# Debug
 
-#### Using IBM Cloud development CLI
+## Using IBM Cloud development CLI
 To build and debug your app, run:
 ```bash
 bx dev build --debug
 bx dev debug
 ```
-#### Using your local development environment
+## Using your local development environment
 There are two different options for debugging a `flask` project:
 1. Run `python manage.py runserver` to start a native flask development server. This comes with the Werkzeug stack-trace debugger, which will present runtime failure stack-traces in-browser with the ability to inspect objects at any point in the trace. For more information, see [Werkzeug documentation](http://werkzeug.pocoo.org/).
 2. Run `python manage.py debug` to run a flask development server with debug exposed, but the native debugger/reloader turned off. This grants access for an IDE to attach itself to the process (i.e. in PyCharm, use `Run` -> `Attach to Local Process`)
