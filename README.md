@@ -31,7 +31,10 @@ Let’s save our house, let’s save the world with a solution called Community 
     5. Db2 Warehouse on Cloud to store the feedback data for batch predictions
     6. SQL Database to store the data
     7. Natural Language processing to analyze social network inputs.
+    8. Google Maps Api to get information about the evacuation route
 
+
+![schema](doc-images/Schema.jpg)
 
 
 ### Table of Contents
@@ -65,13 +68,12 @@ In order to create the app we used the ibm cloud templates in the cloud foundry 
 It was respected the structure of the project as created by ibm cloud but all the logic and presentation parts were modified.
 
 
-The logic part is in the directory:
-    \cimc\server\routes
+The logic part is in the directory:  `\cimc\server\routes`
+
 
 This part is referred to all the code needed in order to creates the different routes of the web applications and to give them all the logic
 
-The presentation part is in the directory:
-    \cimc\public
+The presentation part is in the directory: `\cimc\public`
 
 For the presentation part was used html, flask, css and javascript
 
@@ -119,23 +121,29 @@ In case you want to create the database in IBM Cloud, you have to follow the nex
 
 1. Select from the Catalog the Compose MySQL component
 
+![database1](doc-images/database1.png)
+
 2. Create the Database
+
+![database2](doc-images/database2.png)
 
 3. Create the credentials
 
-4. Introduce the credentials in the file server/routes/configbbdd.py
+![database3](doc-images/database3.png)
+
+4. Introduce the credentials in the file [configbbdd.py](server/routes/configbbdd.py)
 
 Here you have an example:
 
-config = {
+`config = {
     'user': 'admin',
     'password': 'OQTFVYYAEKIXATFF',
     'host': 'sl-eu-lon-2-portal.9.dblayer.com',
     'port': 28398,
     'database': 'name_database',
-}
+}`
 
-5. In the database you created run the script database/database.sql using a graphical tool for working with MySQL servers and databases (for example: MySQL Workbench)
+5. In the database you created run the script [database.sql](database/database.sql) using a graphical tool for working with MySQL servers and databases (for example: MySQL Workbench)
 
 
 <a name='configuration_watson'></a>
@@ -191,16 +199,16 @@ Edit the file server/routes/credentials_cimc and modify all the credentials (nam
 
 In the url part you have to detail where the services is implemented, for example:
 
-"url":"https://eu-gb.ml.cloud.ibm.com"
+`"url":"https://eu-gb.ml.cloud.ibm.com"`
 
 
 In the call part you have to introduce the call to the service, for example:
 
-"call":"https://eu-gb.ml.cloud.ibm.com/v3/wml_instances/aed51460-2eac-4xddc-92343-c8b54343febb/deployments/9cfae045-233d-44af-864c-e13dc9877e06/online"
+`"call":"https://eu-gb.ml.cloud.ibm.com/v3/wml_instances/aed51460-2eac-4xddc-92343-c8b54343febb/deployments/9cfae045-233d-44af-864c-e13dc9877e06/online"`
 
 It's important you introduce your google maps credentials in order to integrate with this service, for example:
 
-key_googlemaps='AIzaDke8ywEB9bGOgD8UAsAD93v9BCQ4PYErSyU'
+`key_googlemaps='AIzaDke8ywEB9bGOgD8UAsAD93v9BCQ4PYErSyU'`
 
 
 <a name="run"></a>
