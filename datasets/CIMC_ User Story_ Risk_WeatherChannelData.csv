@@ -1,0 +1,8 @@
+Temperature,Relative Humidity,Wind Speed,Risk Index
+30,30,30,HIGH
+10,70,10,LOW
+5,80,5,LOW
+30,25,25,HIGH
+12,60,40,MEDIUM
+35,20,40,HIGH
+38,20,30,HIGH

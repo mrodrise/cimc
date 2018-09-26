@@ -1,0 +1,7 @@
+﻿House id,House orientation,Type of house,Topography,Drought,Access way,High-tension towers,Next the house,Fence,Water,Outer walls,Accumulation of leaves,Roof,Barbecue,Waterproof,Water source,Result
+House1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,46
+House2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,50
+House3,3,3,3,3,3,3,3,3,3,3,2,3,3,3,3,43
+House4,4,4,4,3,4,3,4,4,3,4,2,4,3,4,4,39
+House5,5,2,1,1,1,2,1,5,1,4,2,2,3,4,4,54
+House6,7,2,2,3,1,2,1,5,1,1,1,2,3,4,4,64
