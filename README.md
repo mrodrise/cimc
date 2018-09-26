@@ -112,14 +112,14 @@ The project contains IBM Cloud specific files that are used to deploy the applic
 
 Credentials are either taken from the VCAP_SERVICES environment variable if in IBM Cloud, or from a config file if running locally.
 
-<a name='configuration_database'>
+<a name='configuration_database'></a>
 # Database Configuration
 
 
 
 
 
-<a name='configuration_watson'>
+<a name='configuration_watson'></a>
 # Watson Services Configuration
 
 How to setup cognitive services using IBM Watson in IBM Cloud: Predict Fire Risk based on home and surroundings configuration, on Weather Channel data and Fire Load with Watson Studio Machine Learning
