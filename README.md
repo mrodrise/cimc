@@ -202,7 +202,7 @@ On the basis of the provided data-sets, included in the solution as examples, Ma
 
 ### C. Include the new credentials in the project
 
-Edit the file [credentials_cimc](server/routes/credentials_cimc) and modify all the credentials (name, password, urls and call). The code is commented to oriented you.
+Edit the file [credentials_cimc](server/routes/credentials_cimc.py) and modify all the credentials (name, password, urls and call). The code is commented to oriented you.
 
 In the url part you have to detail where the services is implemented, for example:
 
@@ -229,7 +229,7 @@ In the call part you have to introduce the call to the service, for example:
 
 ![language3](doc_images/language3.jpg)
 
-4. Introduce the credentials in the file [credentials_cimc](server/routes/credentials_cimc)
+4. Introduce the credentials in the file [credentials_cimc](server/routes/credentials_cimc.py)
 
 Here you have an example:
 
@@ -258,7 +258,7 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 
 ![weather4](doc_images/weather4.jpg)
 
-4. Introduce the credentials in the file [credentials_cimc](server/routes/credentials_cimc)
+4. Introduce the credentials in the file [credentials_cimc](server/routes/credentials_cimc.py)
 
 Here you have an example:
 
@@ -283,7 +283,7 @@ You'll have to create a directions api in the google maps for developers and get
 8. Create a credential for this service in case you don't have
 9. Copy the credential key
 
-10. Edit the file [credentials_cimc](server/routes/credentials_cimc) and modify the key_googlemaps credential, for example:
+10. Edit the file [credentials_cimc](server/routes/credentials_cimc.py) and modify the key_googlemaps credential, for example:
 
 `key_googlemaps='AIzaDke8ywEB4bGOgD8UAsAD93v9BCQ4PYErSyU'`
 
