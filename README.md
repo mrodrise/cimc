@@ -30,8 +30,9 @@ Let’s save our house, let’s save the world with a solution called Community 
     4. Apache Spark service to execute Machine Learning workload
     5. Db2 Warehouse on Cloud to store the feedback data for batch predictions
     6. SQL Database to store the data
-    7. Natural Language processing to analyze social network inputs.
+    7. Natural Language processing to analyze social network inputs
     8. Google Maps Api to get information about the evacuation route
+    9. Weather Insights to get information about the Weather
 
 
 ![schema](doc_images/Schema.jpg)
