@@ -236,10 +236,10 @@ In the call part you have to introduce the call to the service, for example:
 
 Here you have an example:
 
-natural_language_understanding = NaturalLanguageUnderstandingV1(
+`natural_language_understanding = NaturalLanguageUnderstandingV1(
     username='3f619c43-9aec-4817-a67b-2d44f7db2622',
     password='6uXcMzAXtEov',
-    version='2018-03-19')
+    version='2018-03-19')`
 
 
 <a name="configuration_weather"></a>
@@ -267,10 +267,10 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 
 Here you have an example:
 
-weather_credentials={
+`weather_credentials={
 "username": "8b355826-006c-41ac-83b7-2a6c29b03816",
 "password": "80ufr7kH9C"
-}
+}`
 
 <a name="configuration_maps"></a>
 # Google Maps Configuration
