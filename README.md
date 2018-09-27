@@ -124,15 +124,15 @@ In case you want to create the database in IBM Cloud, you have to follow the nex
 
 1. Select from the Catalog the Compose MySQL component
 
-![database1](doc_images/database1.png)
+![database1](doc_images/database1.jpg)
 
 2. Create the Database
 
-![database2](doc_images/database2.png)
+![database2](doc_images/database2.jpg)
 
 3. Create the credentials
 
-![database3](doc_images/database3.png)
+![database3](doc_images/database3.jpg)
 
 4. Introduce the credentials in the file [configbbdd.py](server/routes/configbbdd.py)
 
@@ -215,15 +215,15 @@ In the call part you have to introduce the call to the service, for example:
 
 1. Select from the Catalog the service
 
-![language1](doc_images/language1.png)
+![language1](doc_images/language1.jpg)
 
 2. Create the Service
 
-![language2](doc_images/language2.png)
+![language2](doc_images/language2.jpg)
 
 3. Copy the credentials
 
-![language3](doc_images/language3.png)
+![language3](doc_images/language3.jpg)
 
 4. Introduce the credentials in the file [credentials_cimc](server/routes/credentials_cimc)
 
@@ -240,19 +240,19 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 
 1. Select from the Catalog the service
 
-![weather1](doc_images/weather1.png)
+![weather1](doc_images/weather1.jpg)
 
 2. Create the Service
 
-![weather2](doc_images/weather2.png)
+![weather2](doc_images/weather2.jpg)
 
 3. Create the credentials
 
-![weather3](doc_images/weather3.png)
+![weather3](doc_images/weather3.jpg)
 
 3. Copy the credentials
 
-![weather4](doc_images/weather4.png)
+![weather4](doc_images/weather4.jpg)
 
 4. Introduce the credentials in the file [credentials_cimc](server/routes/credentials_cimc)
 
@@ -269,7 +269,7 @@ It's important you introduce your google maps credentials in order to integrate 
 
 You'll have to create a directions api in the google maps for developers and get the credential of the service.
 
-1. Go to the Google Cloud Platform Console https://console.cloud.google.com/project/_/apiui/apis/enabled
+1. Go to the Google Cloud Platform Console:  <a name="https://console.cloud.google.com/project/_/apiui/apis/enabled"></a>
 2. Click the Select a project button, then select the same project you set up for the Maps JavaScript API and click Open.
 3. From the list of APIs on the Dashboard, look for Directions API.
 4. If you see the API in the list, you’re all set. If the API is not listed, enable it:
