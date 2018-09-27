@@ -36,6 +36,9 @@ Let’s save our house, let’s save the world with a solution called Community 
 
 ![schema](doc_images/Schema.jpg)
 
+You can find all documentation about this project in the directory [all_documents](all_documents)
+
+
 
 ### Table of Contents
 * [Summary](#summary)
