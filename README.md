@@ -43,7 +43,10 @@ Let’s save our house, let’s save the world with a solution called Community 
 * [Schema](#schema)
 * [Environment Configuration](#configuration)
 * [Database Configuration](#configuration_database)
-* [Watson Services Configuration](#configuration_watson)
+* [Watson ML Services Configuration](#configuration_watson)
+* [Natural Language Processing Configuration](#configuration_language)
+* [Weather Channel Configuration](#configuration_weather)
+* [Google Maps Configuration](#configuration_maps)
 * [Run](#run)
 * [Debug](#debug)
 
@@ -147,7 +150,7 @@ Here you have an example:
 
 
 <a name='configuration_watson'></a>
-# Watson Services Configuration
+# Watson ML Services Configuration
 
 As part of the CIMC solution, the application calculates several risk factors that helps to reinforce the idea of self-awareness and are intended to be used for assessment as an aid to decision making. This section describes how to setup cognitive services using IBM Watson in IBM Cloud: Predict Fire Risk based on home and surroundings configuration, on Weather Channel data and Fire Load with Watson Studio Machine Learning
 
@@ -170,7 +173,7 @@ On the basis of the provided data-sets, included in the solution as examples, Ma
 * Apache Spark
 
 ## Prerequisites
-* Download data-sets in CSV format.
+* Download the files in the [datasets](datasets/) directory in CSV format.
 
 ## Steps
 
@@ -193,9 +196,9 @@ On the basis of the provided data-sets, included in the solution as examples, Ma
 * Go to the Implementation tab and copy the Scoring End-point at the top. You will use this as SCORING_URL in either the IBM Cloud Runtime Environment Variable.
 * On your Watson Studio project page, got to the Services tab on the top menu bar, and navigate to the Watson Machine Learning service you created earlier. Double-click the service, go to Service Credentials -> View Credentials.
 
-###C. Include the new credentials in the project
+### C. Include the new credentials in the project
 
-Edit the file server/routes/credentials_cimc and modify all the credentials (name, password, urls and call). The code is commented to oriented you.
+Edit the file [credentials_cimc](server/routes/credentials_cimc) and modify all the credentials (name, password, urls and call). The code is commented to oriented you.
 
 In the url part you have to detail where the services is implemented, for example:
 
@@ -206,9 +209,83 @@ In the call part you have to introduce the call to the service, for example:
 
 `"call":"https://eu-gb.ml.cloud.ibm.com/v3/wml_instances/aed51460-2eac-4xddc-92343-c8b54343febb/deployments/9cfae045-233d-44af-864c-e13dc9877e06/online"`
 
-It's important you introduce your google maps credentials in order to integrate with this service, for example:
 
-`key_googlemaps='AIzaDke8ywEB9bGOgD8UAsAD93v9BCQ4PYErSyU'`
+<a name='configuration_language'></a>
+# Natural Language Processing Configuration
+
+1. Select from the Catalog the service
+
+![language1](doc_images/language1.png)
+
+2. Create the Service
+
+![language2](doc_images/language2.png)
+
+3. Copy the credentials
+
+![language3](doc_images/language3.png)
+
+4. Introduce the credentials in the file [credentials_cimc](server/routes/credentials_cimc)
+
+Here you have an example:
+
+natural_language_understanding = NaturalLanguageUnderstandingV1(
+    username='3f619c43-9aec-4817-a67b-2d44f7db2622',
+    password='6uXcMzAXtEov',
+    version='2018-03-19')
+
+
+<a name="configuration_weather"></a>
+# Weather Channel Configuration
+
+1. Select from the Catalog the service
+
+![weather1](doc_images/weather1.png)
+
+2. Create the Service
+
+![weather2](doc_images/weather2.png)
+
+3. Create the credentials
+
+![weather3](doc_images/weather3.png)
+
+3. Copy the credentials
+
+![weather4](doc_images/weather4.png)
+
+4. Introduce the credentials in the file [credentials_cimc](server/routes/credentials_cimc)
+
+Here you have an example:
+
+weather_credentials={
+"username": "8b355826-006c-41ac-83b7-2a6c29b03816",
+"password": "80ufr7kH9C"
+}
+
+<a name="configuration_maps"></a>
+# Google Maps Configuration
+It's important you introduce your google maps credentials in order to integrate with this service.
+
+You'll have to create a directions api in the google maps for developers and get the credential of the service.
+
+1. Go to the Google Cloud Platform Console https://console.cloud.google.com/project/_/apiui/apis/enabled
+2. Click the Select a project button, then select the same project you set up for the Maps JavaScript API and click Open.
+3. From the list of APIs on the Dashboard, look for Directions API.
+4. If you see the API in the list, you’re all set. If the API is not listed, enable it:
+5. At the top of the page, select ENABLE API to display the Library tab. Alternatively, from the left side menu, select Library.
+6. Search for Directions API, then select it from the results list.
+7. Select ENABLE. When the process finishes, Directions API appears in the list of APIs on the Dashboard.
+8. Create a credential for this service in case you don't have
+9. Copy the credential key
+
+10. Edit the file [credentials_cimc](server/routes/credentials_cimc) and modify the key_googlemaps credential, for example:
+
+`key_googlemaps='AIzaDke8ywEB4bGOgD8UAsAD93v9BCQ4PYErSyU'`
+
+11. Edit the file [map_google.html](public/map_google.html) and change the line src introducing your key in googlemaps in the URL, for example:
+
+`src="https://maps.googleapis.com/maps/api/js?key=AIzaDke8ywEB4bGOgD8UAsAD93v9BCQ4PYErSyU&callback=initMap">`
 
 
 <a name="run"></a>
