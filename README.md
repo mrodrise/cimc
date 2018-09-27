@@ -134,7 +134,11 @@ In case you want to create the database in IBM Cloud, you have to follow the nex
 
 ![database3](doc_images/database3.jpg)
 
-4. Introduce the credentials in the file [configbbdd.py](server/routes/configbbdd.py)
+4. Copy the credentials
+
+![database3](doc_images/database4.jpg)
+
+5. Introduce the credentials in the file [configbbdd.py](server/routes/configbbdd.py)
 
 Here you have an example:
 
