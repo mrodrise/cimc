@@ -254,9 +254,11 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 
 ![weather3](doc_images/weather3.jpg)
 
+![weather3](doc_images/weather4.jpg)
+
 3. Copy the credentials
 
-![weather4](doc_images/weather4.jpg)
+![weather4](doc_images/weather5.jpg)
 
 4. Introduce the credentials in the file [credentials_cimc](server/routes/credentials_cimc.py)
 
