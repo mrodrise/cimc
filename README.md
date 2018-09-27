@@ -278,7 +278,7 @@ It's important you introduce your google maps credentials in order to integrate 
 
 You'll have to create a directions api in the google maps for developers and get the credential of the service.
 
-1. Go to the Google Cloud Platform Console:  [Google](https://console.cloud.google.com/project/_/apiui/apis/enabled)
+1. Go to the [Google Cloud Platform Console](https://console.cloud.google.com/project/_/apiui/apis/enabled)
 2. Click the Select a project button, then select the same project you set up for the Maps JavaScript API and click Open.
 3. From the list of APIs on the Dashboard, look for Directions API.
 4. If you see the API in the list, you’re all set. If the API is not listed, enable it:
