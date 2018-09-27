@@ -207,14 +207,34 @@ On the basis of the provided data-sets, included in the solution as examples, Ma
 
 Edit the file [credentials_cimc](server/routes/credentials_cimc.py) and modify all the credentials (name, password, urls and call). The code is commented to oriented you.
 
-In the url part you have to detail where the services is implemented, for example:
+Here you have examples for the credentials you have to modify:
 
-`"url":"https://eu-gb.ml.cloud.ibm.com"`
+* Credentias to calculate the fire probability based on house features
 
+`homerisk_credentials={
+"url": "https://eu-gb.ml.cloud.ibm.com",
+"username": "e4d0dd99-89dj-4051-8835-9de369cd6462",
+"password": "014b669d-395e-4b86-8a48-00123ae8e32c",
+"call": 'https://eu-gb.ml.cloud.ibm.com/v3/wml_instances/e4d0dd99-89dj-4051-8835-9de369cd6462/deployments/4f45d47d-0276-43ae-8805-dcc91bbd0cda/online'
+}`
 
-In the call part you have to introduce the call to the service, for example:
+* Credentials for fire load service created in Watson
 
-`"call":"https://eu-gb.ml.cloud.ibm.com/v3/wml_instances/aed51460-2eac-4xddc-92343-c8b54343febb/deployments/9cfae045-233d-44af-864c-e13dc9877e06/online"`
+`fireload_credentials={
+"url": "https://eu-gb.ml.cloud.ibm.com",
+"username": "e4d0dd99-89dj-4051-8835-9de369cd6462",
+"password": "014b669d-395e-4b86-8a48-00123ae8e32c",
+"call": "https://eu-gb.ml.cloud.ibm.com/v3/wml_instances/aed51460-2eac-4edc-91b3-c8b3a238febb/deployments/32e50cd2-4f52-4be2-8d8a-a1f5cdecbed7/online"
+}`
+
+* Credentials to calculate the fire probability based on weather parameters
+
+`fireprobability_credentials={
+"url": "https://eu-gb.ml.cloud.ibm.com",
+"username": "e4d0dd99-89dj-4051-8835-9de369cd6462",
+"password": "014b669d-395e-4b86-8a48-00123ae8e32c",
+"call": 'https://eu-gb.ml.cloud.ibm.com/v3/wml_instances/aed51460-2eac-4edc-91b3-c8b3a238febb/deployments/9cfae045-233d-44af-864c-e13dc9877e01/online'
+}`
 
 
 <a name='configuration_language'></a>
